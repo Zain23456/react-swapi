@@ -1,36 +1,40 @@
-import { useEffect, useState } from 'react'
-import { getAllStarships } from '../../services/api-calls'
-import { Link } from 'react-router-dom'
+import { useState, useEffect } from "react"
+import { getAllStarships } from "../../services/api-calls"
+import { Link } from "react-router-dom"
 
 const Starships = () => {
   const [starships, setStarships] = useState([])
 
   useEffect(()=> {
-    const fetchAllStarships = async () => {
+    const fetchStarshipsData = async () => {
       const starshipsData = await getAllStarships()
       setStarships(starshipsData.results)
+      console.log(starshipsData)
     }
-      fetchAllStarships()
+    fetchStarshipsData()
   }, [])
 
 
-return (
-  <>
-  <div>
-      <h3>Starships</h3>
-      <div className="icon-container">
-        {starships.map((starshipName, index) =>
-          <Link key={index} state={{ starshipName }} to='/starships'>
-            <div className="class-div" >
-              {starshipName.name}
-            </div>
-          </Link>
-        )}
+  return (
+    <>
+      <div>
+        <h3>Starships</h3>
+        <div className="icon-container">
+          {starships.map((starshipName, index) =>
+            <Link
+              key={index}
+              to='/starship'
+              state={{ starshipName }}
+            >
+              <div className="class-div">
+                {starshipName.name}
+              </div>
+            </Link>
+          )}
+        </div>
       </div>
-    </div>
-  </>
-)
+    </>
+  )
 }
 
 export default Starships
-    

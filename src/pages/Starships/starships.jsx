@@ -18,7 +18,7 @@ const Starships = () => {
   return (
     <>
       <div>
-        <h3>Starships</h3>
+        
         <div className="icon-container">
           {starships.map((starshipName, index) =>
             <Link

@@ -9,20 +9,21 @@ const StarshipPage = () => {
 
   useEffect(() => {
     const fetchDetails = async () => {
-      const starshipPage = await getDetails(location.state.starshipName.url)
+      const starshipPageData = await getDetails(location.state.starshipName.url)
       console.log(starshipPage)
-      setStarshipPage(starshipPage)
+      setStarshipPage(starshipPageData)
     }
     fetchDetails()
   }, [location.state.starshipName.url])
 
   return (
     <>
-      <div>
+    <div className='center-page'>
+      <div  className="page-class-div">
         {starshipPage.name ?
         <>
           <h2>NAME: {starshipPage.name}</h2>
-          <div>MODEL: {starshipPage.model}</div>
+          <h3>MODEL: {starshipPage.model}</h3>
           <Link to='/'>Return</Link>
         </>
         :
@@ -30,6 +31,7 @@ const StarshipPage = () => {
           <p>Loading class details...</p>
         </>}
       </div>
+    </div>
     </>
   )
 }

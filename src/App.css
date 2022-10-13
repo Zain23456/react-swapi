@@ -1,0 +1,44 @@
+.icon-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: clamp(400px, 80vw, 1200px);
+  margin: auto;
+  justify-content: start;
+}
+
+.class-div {
+  border: 1px solid black;
+  width: 125px;
+  display: grid;
+  justify-items: center;
+  padding: 50px;
+  margin: 1rem;
+  background-color:rgb(61, 80, 80);
+  color: white;
+}
+
+.center-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15%;
+}
+
+.page-class-div {
+  border: 1px solid black;
+  width: 250px;
+  display: grid;
+  justify-items: start;
+  padding: 50px;
+  margin: 1rem;
+  background-color:rgb(61, 80, 80);
+  color: white;
+}
+
+#starwars-header {
+  background-color: #000000;
+  color: #fff;
+  text-align: center;
+  font-size: 36px;
+}
